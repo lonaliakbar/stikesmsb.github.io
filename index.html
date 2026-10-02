@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Situs resmi STIKES Medika Seramoe Barat, Kabupaten Aceh Barat, Aceh.">
+<title>STIKES Medika Seramoe Barat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy-deep:#0A1E33; --navy-light:#123457; --gold:#F4E3B2; --gold-dim:#C9AE6E; --sky:#5BAEEA; --sky-deep:#1D8FE1; --cream:#FBF8F1; --ink:#0A1E33; --muted:#5C6B7A; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+  h1,h2,h3{ font-family:'Cormorant Garamond',serif; font-weight:600; }
+  a{ text-decoration:none; color:inherit; }
+  img{ max-width:100%; display:block; }
+  .w{ max-width:1000px; margin:0 auto; padding:0 28px; }
+  header{ background:var(--navy-deep); border-bottom:1px solid rgba(244,227,178,0.15); position:sticky; top:0; z-index:20; }
+  nav{ display:flex; align-items:center; justify-content:space-between; max-width:1000px; margin:0 auto; padding:16px 28px; flex-wrap:wrap; gap:10px; }
+  .logo{ font-family:'Cormorant Garamond',serif; line-height:1; display:flex; flex-direction:column; }
+  .logo b{ color:var(--gold); font-size:20px; letter-spacing:1px; }
+  .logo i{ color:var(--sky); font-size:16px; }
+  .links{ display:flex; gap:24px; font-size:13px; color:rgba(255,255,255,0.75); flex-wrap:wrap; }
+  .links a:hover, .links a.on{ color:var(--gold); }
+  .top{ background:linear-gradient(160deg,var(--navy-deep),var(--navy-light)); padding:56px 0 44px; }
+  .eyebrow{ font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-dim); font-weight:500; }
+  .top h1{ color:#fff; font-size:44px; line-height:1.2; margin-top:10px; }
+  .top p{ color:rgba(255,255,255,0.65); margin-top:10px; max-width:600px; font-size:15px; }
+  .body{ padding:44px 0 72px; }
+  .cover{ width:100%; max-height:380px; object-fit:cover; border-radius:4px; margin-bottom:28px; }
+  .text p{ font-size:16px; color:#2b3a4a; margin-bottom:16px; line-height:1.8; }
+  .date{ font-size:12px; color:var(--sky-deep); font-weight:600; letter-spacing:0.5px; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
+  .card{ display:block; background:#fff; border:1px solid #e8e2d4; border-radius:4px; overflow:hidden; transition:all 0.3s ease; }
+  a.card:hover{ border-color:var(--sky-deep); transform:translateY(-6px); box-shadow:0 12px 30px rgba(29,143,225,0.14); }
+  .card img{ width:100%; height:160px; object-fit:cover; }
+  .card .in{ padding:20px; }
+  .card h3{ font-size:21px; margin:6px 0 8px; color:var(--navy-deep); }
+  .card p{ font-size:13px; color:var(--muted); }
+  .jenjang{ font-size:11px; letter-spacing:1.5px; color:var(--sky-deep); text-transform:uppercase; font-weight:600; }
+  h2.sec{ font-size:28px; margin:48px 0 18px; }
+  .btn{ display:inline-block; background:var(--gold); color:var(--navy-deep); font-weight:600; font-size:13px; padding:13px 26px; border-radius:2px; margin-top:10px; }
+  .btn:hover{ filter:brightness(0.95); }
+  .gal{ columns:3 220px; column-gap:12px; }
+  .gal figure{ break-inside:avoid; margin-bottom:12px; cursor:zoom-in; }
+  .gal img{ width:100%; border-radius:4px; }
+  .gal figcaption{ font-size:12px; color:var(--muted); padding:4px 2px; }
+  .lb{ position:fixed; inset:0; background:rgba(10,30,51,0.92); display:none; align-items:center; justify-content:center; z-index:50; padding:24px; cursor:zoom-out; flex-direction:column; gap:12px; }
+  .lb.open{ display:flex; }
+  .lb img{ max-height:85vh; border-radius:4px; }
+  .lb span{ color:#fff; font-size:13px; }
+  .msg{ text-align:center; color:var(--muted); padding:60px 0; }
+  footer{ background:var(--navy-deep); color:rgba(255,255,255,0.55); text-align:center; padding:26px; font-size:12px; }
+  footer a{ color:var(--gold-dim); }
+  @media (max-width:640px){ .top h1{ font-size:32px; } }
+
+  .hero{ background:var(--navy-deep) center/cover no-repeat; padding:120px 0 110px; }
+  .hero h1{ color:#fff; font-size:60px; line-height:1.1; max-width:760px; }
+  .hero p{ color:rgba(255,255,255,0.8); font-size:18px; margin-top:16px; max-width:560px; }
+  .sect{ padding:64px 0 8px; }
+  .sect h2{ font-size:36px; margin-bottom:20px; }
+  .sect .more{ display:inline-block; margin-top:18px; color:var(--sky-deep); font-weight:600; font-size:14px; }
+  .pmb{ background:linear-gradient(160deg,var(--navy-deep),var(--navy-light)); margin-top:64px; padding:64px 0; }
+  .pmb h2{ color:#fff; font-size:36px; margin-bottom:12px; }
+  .pmb p{ color:rgba(255,255,255,0.75); max-width:620px; margin-bottom:10px; }
+  .kontak{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
+  .kontak div{ background:#fff; border:1px solid #e8e2d4; border-radius:4px; padding:18px 20px; }
+  .kontak b{ display:block; font-size:12px; color:var(--sky-deep); margin-bottom:4px; }
+  .gal.mini{ columns:3 200px; }
+  @media (max-width:640px){ .hero h1{ font-size:38px; } .hero{ padding:80px 0 70px; } }
+</style>
+</head>
+<body>
+<header><nav>
+  <a class="logo" href="index.html"><b>STIKES</b><i>Medika</i></a>
+  <div class="links">
+    <a href="index.html" class="on">Beranda</a>
+    <a href="prodi/">Program studi</a>
+    <a href="berita/">Berita</a>
+    <a href="galeri/">Galeri</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+</nav></header>
+<main id="app"><p class="msg">Memuat...</p></main>
+<footer>© <span id="y"></span> STIKES Medika Seramoe Barat · Kabupaten Aceh Barat, Aceh · <a href="#kontak">Hubungi kami</a></footer>
+<script>
+  const app = document.getElementById('app');
+  const DEF = 'https://assets.siakadcloud.com/uploads/stikesmsb/bgaplikasi/1839.jpg';
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const slugify = t => String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50) || 'item';
+  const paras = t => String(t || '').split(/\n{2,}/).filter(x => x.trim()).map(x => `<p>${esc(x).replace(/\n/g, '<br>')}</p>`).join('');
+  const human = k => String(k).replace(/[_-]+/g, ' ').replace(/^./, c => c.toUpperCase());
+  const sec = (id, inner) => `<section class="sect" id="${id}"><div class="w">${inner}</div></section>`;
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  function render(c) {
+    const hero = c.hero || {}, tentang = c.tentang || {}, pmb = c.pmb || {}, kontak = c.kontak || {};
+    const progs = c.programs || [], berita = (c.berita || []).slice(0, 3), galeri = (c.galeri || []).slice(0, 6);
+    let h = `<section class="hero" id="hero"><div class="w"><h1>${esc(hero.judul || 'STIKES Medika Seramoe Barat')}</h1>${hero.subjudul ? `<p>${esc(hero.subjudul)}</p>` : ''}${hero.tombol_teks ? `<a class="btn" style="margin-top:24px" href="${esc(hero.tombol_link || '#pmb')}">${esc(hero.tombol_teks)}</a>` : ''}</div></section>`;
+    if (tentang.isi || tentang.judul) h += sec('tentang', `<h2>${esc(tentang.judul || 'Tentang kami')}</h2><div class="text">${paras(tentang.isi)}</div>`);
+    if (progs.length) h += sec('prodi', `<h2>Program studi</h2><div class="grid">${progs.map(p => `<a class="card" href="prodi/${slugify(p.nama)}/"><div class="in"><div class="jenjang">${esc(p.jenjang)}</div><h3>${esc(p.nama)}</h3><p>${esc(p.deskripsi)}</p></div></a>`).join('')}</div><a class="more" href="prodi/">Lihat semua program studi</a>`);
+    if (berita.length) h += sec('berita', `<h2>Berita terbaru</h2><div class="grid">${berita.map(b => { const inner = `<img src="${esc(b.gambar || DEF)}" alt=""><div class="in"><div class="date">${esc(b.tanggal)}</div><h3>${esc(b.judul)}</h3><p>${esc(b.isi)}</p></div>`; return b.slug ? `<a class="card" href="berita/${encodeURIComponent(b.slug)}/">${inner}</a>` : `<div class="card">${inner}</div>`; }).join('')}</div><a class="more" href="berita/">Lihat semua berita</a>`);
+    if (galeri.length) h += sec('galeri', `<h2>Galeri</h2><div class="gal mini">${galeri.map(g => `<figure><img src="${esc(g.src)}" alt="${esc(g.ket || 'Foto galeri')}" loading="lazy"></figure>`).join('')}</div><a class="more" href="galeri/">Lihat semua foto</a>`);
+    if (pmb.judul || pmb.isi) h += `<section class="pmb" id="pmb"><div class="w"><h2>${esc(pmb.judul || 'Penerimaan mahasiswa baru')}</h2>${paras(pmb.isi).replace(/<p>/g, '<p>')}${pmb.tombol_teks ? `<a class="btn" href="${esc(pmb.tombol_link || '#kontak')}">${esc(pmb.tombol_teks)}</a>` : ''}</div></section>`;
+    const rows = Object.entries(kontak).filter(([, v]) => String(v || '').trim());
+    if (rows.length) h += sec('kontak', `<h2>Kontak</h2><div class="kontak">${rows.map(([k, v]) => `<div><b>${esc(human(k))}</b>${esc(v)}</div>`).join('')}</div>`);
+    h += '<div style="height:64px"></div>';
+    app.innerHTML = h;
+    if (hero.gambar) document.getElementById('hero').style.backgroundImage = `linear-gradient(rgba(10,30,51,.78),rgba(10,30,51,.78)),url(${JSON.stringify(hero.gambar)})`;
+    if (location.hash) { const t = document.querySelector(location.hash); if (t) t.scrollIntoView(); }
+  }
+
+  fetch('data/content.json?v=' + Date.now(), { cache: 'no-store' }).then(r => { if (!r.ok) throw 0; return r.json(); }).then(render)
+    .catch(() => { app.innerHTML = '<p class="msg">Data belum dapat dimuat. Pastikan data/content.json tersedia dan situs dibuka lewat GitHub Pages.</p>'; });
+</script>
+</body>
+</html>

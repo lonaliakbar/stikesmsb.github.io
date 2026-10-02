@@ -1,0 +1,140 @@
+{
+  "hero": {
+    "judul": "Mencetak tenaga kesehatan yang kompeten dan berkarakter",
+    "subjudul": "STIKES Medika Seramoe Barat, pendidikan tinggi kesehatan di Kabupaten Aceh Barat, Aceh.",
+    "gambar": "https://assets.siakadcloud.com/uploads/stikesmsb/bgaplikasi/1839.jpg",
+    "tombol_teks": "Daftar sekarang",
+    "tombol_link": "#pmb"
+  },
+  "tentang": {
+    "judul": "Tentang kami",
+    "isi": "STIKES Medika Seramoe Barat adalah perguruan tinggi kesehatan yang berkomitmen menyiapkan tenaga kesehatan profesional untuk melayani masyarakat Aceh dan sekitarnya.\n\nDengan dosen yang berpengalaman, laboratorium yang terus dikembangkan, dan kerja sama dengan fasilitas pelayanan kesehatan, kami mendampingi mahasiswa sejak hari pertama hingga siap bekerja.\n\n(Teks contoh. Ganti dengan profil kampus yang sebenarnya.)"
+  },
+  "pmb": {
+    "judul": "Penerimaan mahasiswa baru 2026/2027",
+    "isi": "Pendaftaran dibuka untuk seluruh program studi. Siapkan berkas identitas, ijazah atau surat keterangan lulus, dan pas foto terbaru.\n\nHubungi panitia untuk informasi jadwal seleksi, biaya, dan beasiswa. (Teks contoh.)",
+    "tombol_teks": "Hubungi panitia",
+    "tombol_link": "#kontak"
+  },
+  "kontak": {
+    "alamat": "Kabupaten Aceh Barat, Aceh",
+    "telepon": "0812-0000-0000",
+    "email": "info@contoh.ac.id",
+    "whatsapp": "0812-0000-0000",
+    "jam_layanan": "Senin–Jumat, 08.00–16.00 WIB"
+  },
+  "programs": [
+    {
+      "jenjang": "S1",
+      "nama": "Ilmu Keperawatan",
+      "deskripsi": "Membentuk perawat profesional dengan kompetensi klinik dan etika pelayanan tinggi.",
+      "detail": "Program Sarjana Ilmu Keperawatan dirancang untuk menyiapkan lulusan yang kompeten, beretika, dan siap melayani masyarakat.\n\nKurikulum mencakup keperawatan dasar, medikal bedah, maternitas, anak, jiwa, dan komunitas.\n\nMahasiswa belajar melalui kombinasi perkuliahan, praktikum di laboratorium, dan praktik lapangan di fasilitas pelayanan kesehatan mitra.\n\n(Teks contoh. Ganti dengan informasi program studi yang sebenarnya.)"
+    },
+    {
+      "jenjang": "Profesi",
+      "nama": "Profesi Ners",
+      "deskripsi": "Program pendidikan profesi lanjutan bagi lulusan S1 Ilmu Keperawatan.",
+      "detail": "Program Profesi Ners dirancang untuk menyiapkan lulusan yang kompeten, beretika, dan siap melayani masyarakat.\n\nPeserta menjalani rotasi klinik di berbagai unit pelayanan untuk mengasah keterampilan asuhan keperawatan.\n\nMahasiswa belajar melalui kombinasi perkuliahan, praktikum di laboratorium, dan praktik lapangan di fasilitas pelayanan kesehatan mitra.\n\n(Teks contoh. Ganti dengan informasi program studi yang sebenarnya.)"
+    },
+    {
+      "jenjang": "D3",
+      "nama": "Kebidanan",
+      "deskripsi": "Menyiapkan bidan yang terampil dalam pelayanan ibu, bayi, dan keluarga berencana.",
+      "detail": "Program Diploma Tiga Kebidanan dirancang untuk menyiapkan lulusan yang kompeten, beretika, dan siap melayani masyarakat.\n\nFokus pembelajaran meliputi asuhan kehamilan, persalinan, nifas, bayi baru lahir, dan kesehatan reproduksi.\n\nMahasiswa belajar melalui kombinasi perkuliahan, praktikum di laboratorium, dan praktik lapangan di fasilitas pelayanan kesehatan mitra.\n\n(Teks contoh. Ganti dengan informasi program studi yang sebenarnya.)"
+    },
+    {
+      "jenjang": "S1",
+      "nama": "Kesehatan Masyarakat",
+      "deskripsi": "Mencetak tenaga kesehatan masyarakat yang unggul dalam promosi dan pencegahan penyakit.",
+      "detail": "Program Sarjana Kesehatan Masyarakat dirancang untuk menyiapkan lulusan yang kompeten, beretika, dan siap melayani masyarakat.\n\nMahasiswa mempelajari epidemiologi, biostatistik, promosi kesehatan, dan kebijakan kesehatan.\n\nMahasiswa belajar melalui kombinasi perkuliahan, praktikum di laboratorium, dan praktik lapangan di fasilitas pelayanan kesehatan mitra.\n\n(Teks contoh. Ganti dengan informasi program studi yang sebenarnya.)"
+    },
+    {
+      "jenjang": "S1",
+      "nama": "Farmasi",
+      "deskripsi": "Membekali lulusan dengan ilmu kefarmasian untuk pelayanan obat yang aman dan rasional.",
+      "detail": "Program Sarjana Farmasi dirancang untuk menyiapkan lulusan yang kompeten, beretika, dan siap melayani masyarakat.\n\nMateri meliputi kimia farmasi, farmakologi, teknologi sediaan, dan pelayanan kefarmasian.\n\nMahasiswa belajar melalui kombinasi perkuliahan, praktikum di laboratorium, dan praktik lapangan di fasilitas pelayanan kesehatan mitra.\n\n(Teks contoh. Ganti dengan informasi program studi yang sebenarnya.)"
+    }
+  ],
+  "berita": [
+    {
+      "slug": "penerimaan-mahasiswa-baru-tahun-akademik-2026-2027",
+      "judul": "Penerimaan mahasiswa baru tahun akademik 2026/2027 resmi dibuka",
+      "tanggal": "28 September 2026",
+      "gambar": "https://picsum.photos/seed/pmb/1000/640",
+      "isi": "Pendaftaran mahasiswa baru untuk seluruh program studi telah dibuka. Calon mahasiswa dapat mendaftar secara langsung di kampus maupun melalui kanal resmi. Pani…"
+    },
+    {
+      "slug": "seminar-kesehatan-masyarakat-bersama-praktisi-dan",
+      "judul": "Seminar kesehatan masyarakat bersama praktisi dan tenaga ahli",
+      "tanggal": "20 September 2026",
+      "gambar": "https://picsum.photos/seed/seminar/1000/640",
+      "isi": "Kampus menyelenggarakan seminar kesehatan yang dihadiri mahasiswa, dosen, dan masyarakat umum. Kegiatan ini membahas upaya promotif dan preventif di tingkat ko…"
+    },
+    {
+      "slug": "mahasiswa-mengikuti-praktik-klinik-di-fasilitas-pe",
+      "judul": "Mahasiswa mengikuti praktik klinik di fasilitas pelayanan kesehatan mitra",
+      "tanggal": "12 September 2026",
+      "gambar": "https://picsum.photos/seed/praktik/1000/640",
+      "isi": "Mahasiswa semester akhir memulai praktik klinik di rumah sakit dan puskesmas mitra. Kegiatan ini menjadi bagian penting dalam membangun kompetensi profesional.…"
+    },
+    {
+      "slug": "bakti-sosial-dan-pemeriksaan-kesehatan-gratis-untu",
+      "judul": "Bakti sosial dan pemeriksaan kesehatan gratis untuk warga sekitar",
+      "tanggal": "3 September 2026",
+      "gambar": "https://picsum.photos/seed/baksos/1000/640",
+      "isi": "Civitas akademika menggelar bakti sosial berupa pemeriksaan tekanan darah, gula darah, dan konsultasi kesehatan gratis bagi warga. Kegiatan berlangsung sehari…"
+    },
+    {
+      "slug": "orientasi-mahasiswa-baru-mengenal-kampus-dan-buday",
+      "judul": "Orientasi mahasiswa baru: mengenal kampus dan budaya akademik",
+      "tanggal": "25 Agustus 2026",
+      "gambar": "https://picsum.photos/seed/orientasi/1000/640",
+      "isi": "Kegiatan orientasi memperkenalkan lingkungan kampus, tata tertib, layanan akademik, serta organisasi kemahasiswaan kepada mahasiswa baru. Peserta juga mengikut…"
+    },
+    {
+      "slug": "pelatihan-keterampilan-dasar-klinik-di-laboratoriu",
+      "judul": "Pelatihan keterampilan dasar klinik di laboratorium kampus",
+      "tanggal": "14 Agustus 2026",
+      "gambar": "https://picsum.photos/seed/lab/1000/640",
+      "isi": "Laboratorium keterampilan klinik dimanfaatkan mahasiswa untuk berlatih prosedur dasar sebelum terjun ke lapangan. Pelatihan dipandu dosen dan instruktur labora…"
+    }
+  ],
+  "galeri": [
+    {
+      "src": "https://assets.siakadcloud.com/uploads/stikesmsb/bgaplikasi/1839.jpg",
+      "ket": "Gedung kampus"
+    },
+    {
+      "src": "https://picsum.photos/seed/kelas/900/600",
+      "ket": "Suasana perkuliahan"
+    },
+    {
+      "src": "https://picsum.photos/seed/lab2/900/700",
+      "ket": "Praktikum laboratorium"
+    },
+    {
+      "src": "https://picsum.photos/seed/wisuda/900/560",
+      "ket": "Kegiatan wisuda"
+    },
+    {
+      "src": "https://picsum.photos/seed/perpus/900/640",
+      "ket": "Perpustakaan"
+    },
+    {
+      "src": "https://picsum.photos/seed/lapangan/900/600",
+      "ket": "Praktik lapangan"
+    },
+    {
+      "src": "https://picsum.photos/seed/organisasi/900/720",
+      "ket": "Kegiatan organisasi mahasiswa"
+    },
+    {
+      "src": "https://picsum.photos/seed/upacara/900/600",
+      "ket": "Upacara dan kegiatan kampus"
+    },
+    {
+      "src": "https://picsum.photos/seed/diskusi/900/660",
+      "ket": "Diskusi kelompok mahasiswa"
+    }
+  ]
+}

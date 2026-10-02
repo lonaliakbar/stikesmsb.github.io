@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin — STIKES Medika Seramoe Barat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy-deep:#0A1E33; --navy-light:#123457; --gold:#F4E3B2; --gold-dim:#C9AE6E; --sky:#5BAEEA; --sky-deep:#1D8FE1; --cream:#FBF8F1; --ink:#0A1E33; --muted:#5C6B7A; --line:#e8e2d4; --danger:#b3382c; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  [hidden]{display:none!important;}
+  body{ font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); line-height:1.55; font-size:14px; }
+  h1,h2,h3{ font-family:'Cormorant Garamond',serif; font-weight:600; }
+  a{ color:inherit; text-decoration:none; }
+  :focus-visible{ outline:2px solid var(--sky-deep); outline-offset:2px; }
+
+  /* tombol */
+  .btn{ font:inherit; font-weight:600; font-size:13px; background:var(--gold); color:var(--navy-deep); border:1px solid var(--gold); padding:10px 20px; border-radius:2px; cursor:pointer; display:inline-block; }
+  .btn:hover:not(:disabled){ filter:brightness(.95); }
+  .btn:disabled{ opacity:.45; cursor:default; }
+  .btn.ghost{ background:transparent; color:inherit; border-color:currentColor; opacity:.85; }
+  .btn.danger{ background:transparent; color:var(--danger); border-color:var(--danger); }
+  .btn.sm{ padding:6px 12px; font-size:12px; }
+  .x{ background:none; border:0; color:var(--danger); cursor:pointer; font:inherit; font-size:12px; }
+
+  /* login */
+  #login{ min-height:100vh; display:grid; place-items:center; padding:24px; background:linear-gradient(160deg,var(--navy-deep),var(--navy-light)); }
+  .lcard{ background:#fff; width:100%; max-width:440px; padding:34px; border-radius:4px; }
+  .lcard h1{ font-size:32px; line-height:1.15; }
+  .lcard > p{ color:var(--muted); margin:8px 0 22px; }
+  .row2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .lcard .btn{ width:100%; margin-top:6px; padding:13px; }
+  .err{ color:var(--danger); margin-top:12px; min-height:20px; }
+  details{ margin-top:18px; color:var(--muted); font-size:13px; }
+  details summary{ cursor:pointer; color:var(--sky-deep); }
+  details ol{ margin:10px 0 0 18px; }
+  details li{ margin-bottom:4px; }
+
+  /* form */
+  .f{ display:block; margin-bottom:16px; }
+  .f .l{ display:block; font-weight:600; font-size:13px; margin-bottom:5px; }
+  .f small{ display:block; color:var(--muted); margin-top:4px; font-size:12px; }
+  input[type=text],input[type=password],input[type=number],textarea{ width:100%; font:inherit; padding:10px 12px; border:1px solid #d6cfbd; border-radius:2px; background:#fff; color:var(--ink); }
+  textarea{ resize:vertical; line-height:1.6; }
+  input:focus,textarea:focus{ border-color:var(--sky-deep); outline:none; box-shadow:0 0 0 3px rgba(29,143,225,.15); }
+  fieldset{ border:1px solid var(--line); border-radius:2px; padding:16px 16px 4px; margin-bottom:16px; background:#fff; }
+  legend{ font-weight:600; padding:0 6px; font-size:13px; }
+  .inline{ display:flex; gap:8px; align-items:flex-start; }
+  .inline input{ flex:1; }
+
+  /* shell */
+  .top{ background:var(--navy-deep); color:#fff; display:flex; align-items:center; gap:18px; padding:12px 24px; position:sticky; top:0; z-index:10; flex-wrap:wrap; }
+  .brand{ font-family:'Cormorant Garamond',serif; display:flex; align-items:baseline; gap:6px; line-height:1; }
+  .brand b{ color:var(--gold); font-size:22px; letter-spacing:1px; }
+  .brand i{ color:var(--sky); font-size:18px; }
+  .brand span{ font-family:'Inter',sans-serif; font-size:12px; color:rgba(255,255,255,.55); margin-left:6px; }
+  .who{ color:rgba(255,255,255,.55); font-size:12px; flex:1; }
+  .acts{ display:flex; gap:8px; align-items:center; }
+  .lay{ display:grid; grid-template-columns:200px 1fr; max-width:1100px; margin:0 auto; gap:32px; padding:28px 24px 80px; }
+  #nav{ display:flex; flex-direction:column; gap:2px; position:sticky; top:84px; align-self:start; }
+  #nav button{ font:inherit; text-align:left; background:none; border:0; border-left:3px solid transparent; padding:10px 14px; cursor:pointer; color:var(--muted); font-weight:500; }
+  #nav button:hover{ color:var(--ink); }
+  #nav button.on{ border-left-color:var(--gold-dim); color:var(--ink); font-weight:600; background:#fff; }
+  @media (max-width:760px){
+    .lay{ grid-template-columns:1fr; gap:16px; }
+    #nav{ flex-direction:row; position:static; overflow-x:auto; }
+    #nav button{ border-left:0; border-bottom:3px solid transparent; white-space:nowrap; }
+    #nav button.on{ border-bottom-color:var(--gold-dim); }
+    .row2{ grid-template-columns:1fr; }
+  }
+
+  /* konten */
+  .bar{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:20px; }
+  .bar h2{ font-size:32px; line-height:1.15; }
+  .sub{ color:var(--muted); margin-top:4px; max-width:560px; }
+  .empty{ color:var(--muted); padding:36px 0; text-align:center; background:#fff; border:1px dashed #d6cfbd; border-radius:2px; }
+  .rows{ background:#fff; border:1px solid var(--line); border-radius:2px; }
+  .row{ display:flex; align-items:center; gap:14px; padding:12px 16px; border-bottom:1px solid var(--line); }
+  .row:last-child{ border-bottom:0; }
+  .rt{ width:64px; height:48px; object-fit:cover; border-radius:2px; flex:none; background:#eee; }
+  .rm{ flex:1; min-width:0; }
+  .rm b{ display:block; font-weight:600; }
+  .rm small{ color:var(--muted); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .ra{ display:flex; gap:6px; flex:none; flex-wrap:wrap; justify-content:flex-end; }
+  .panel{ background:#fff; border:1px solid var(--line); border-radius:2px; padding:24px; }
+  .panel .acts{ margin-top:8px; }
+  .sect{ margin-bottom:8px; }
+  .sect .sh{ text-align:right; height:0; position:relative; top:6px; z-index:1; padding-right:8px; }
+  .item{ display:flex; gap:12px; border-top:1px solid var(--line); padding-top:14px; margin-bottom:12px; }
+  .item > :first-child{ flex:1; min-width:0; }
+  .item fieldset{ border:0; padding:0; background:none; margin:0; }
+  .ictl{ display:flex; flex-direction:column; gap:6px; }
+  .img{ display:flex; gap:12px; align-items:flex-start; }
+  .thumb{ width:120px; height:80px; object-fit:cover; border-radius:2px; background:#eee; flex:none; }
+  .imgctl{ flex:1; display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
+  .gg{ display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:14px; }
+  .gt{ background:#fff; border:1px solid var(--line); border-radius:2px; padding:10px; display:flex; flex-direction:column; gap:8px; }
+  .gt img{ width:100%; height:140px; object-fit:cover; border-radius:2px; background:#eee; }
+  .gt .ra{ justify-content:space-between; }
+  .add{ display:flex; gap:8px; margin-top:8px; }
+  .add input{ max-width:260px; }
+
+  .toast{ position:fixed; bottom:24px; left:50%; transform:translate(-50%,20px); background:var(--navy-deep); color:#fff; padding:12px 20px; border-radius:2px; opacity:0; pointer-events:none; transition:all .25s; max-width:90vw; z-index:50; }
+  .toast.show{ opacity:1; transform:translate(-50%,0); }
+  .toast.bad{ background:var(--danger); }
+  @media (prefers-reduced-motion:reduce){ .toast{ transition:none; } }
+</style>
+</head>
+<body>
+
+<section id="login">
+  <form class="lcard" id="lf" autocomplete="off">
+    <h1>Masuk ke panel admin</h1>
+    <p>Gunakan token GitHub yang punya izin menulis ke repositori situs.</p>
+    <div class="row2">
+      <label class="f"><span class="l">Pemilik repo</span><input type="text" name="owner" required placeholder="username"></label>
+      <label class="f"><span class="l">Nama repo</span><input type="text" name="repo" required placeholder="nama-repo"></label>
+    </div>
+    <label class="f"><span class="l">Branch</span><input type="text" name="branch" value="main" required></label>
+    <label class="f"><span class="l">Token GitHub</span><input type="password" name="token" required placeholder="github_pat_…"></label>
+    <button class="btn" type="submit" id="lbtn">Masuk</button>
+    <div class="err" id="lerr" role="alert"></div>
+    <details>
+      <summary>Cara membuat token</summary>
+      <ol>
+        <li>Buka GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens.</li>
+        <li>Pilih Generate new token, lalu pada Repository access pilih <b>Only select repositories</b> dan centang repo situs ini.</li>
+        <li>Pada Permissions → Repository permissions, set <b>Contents</b> ke <b>Read and write</b>.</li>
+        <li>Salin token dan tempel di atas. Token hanya disimpan di tab ini dan dikirim langsung ke api.github.com.</li>
+      </ol>
+    </details>
+  </form>
+</section>
+
+<div id="shell" hidden>
+  <header class="top">
+    <div class="brand"><b>STIKES</b><i>Medika</i><span>Admin</span></div>
+    <div class="who" id="who"></div>
+    <div class="acts">
+      <a class="btn ghost sm" href="../" target="_blank" rel="noopener">Lihat situs</a>
+      <button class="btn" id="save" disabled>Simpan</button>
+      <button class="btn ghost sm" id="out">Keluar</button>
+    </div>
+  </header>
+  <div class="lay">
+    <nav id="nav" aria-label="Bagian"></nav>
+    <main id="view"></main>
+  </div>
+</div>
+<div id="toast" class="toast" role="status"></div>
+
+<script>
+'use strict';
+const RESERVED = ['programs', 'berita', 'galeri'];
+const $ = s => document.querySelector(s);
+const S = { owner:'', repo:'', branch:'main', token:'', content:null, sha:null, dirty:false, tab:'beranda' };
+const Q = new Map();      // antrean file yang menunggu disimpan: path -> {type:'json'|'bin'|'del', ...}
+const PREV = new Map();   // pratinjau gambar yang baru diunggah: path -> dataURL
+
+/* ---------- util ---------- */
+const slugify = t => String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50) || 'item';
+const humanize = k => String(k).replace(/[_-]+/g, ' ').replace(/^./, c => c.toUpperCase());
+const isImg = k => /(gambar|foto|image|img|logo|banner|cover|thumb|^src$|^bg)/i.test(String(k));
+const todayID = () => new Date().toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
+const excerpt = (t, n = 160) => { t = String(t || '').replace(/\s+/g, ' ').trim(); return t.length <= n ? t : t.slice(0, n - 1).trimEnd() + '…'; };
+const blank = v => Array.isArray(v) ? [] : (v && typeof v === 'object') ? Object.fromEntries(Object.keys(v).map(k => [k, blank(v[k])])) : typeof v === 'number' ? 0 : typeof v === 'boolean' ? false : '';
+
+function h(tag, props, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (v == null || v === false) continue;
+    if (k === 'class') e.className = v;
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat(Infinity)) { if (c == null || c === false) continue; e.append(c.nodeType ? c : document.createTextNode(c)); }
+  return e;
+}
+
+let tt;
+function toast(m, bad) {
+  const t = $('#toast'); t.textContent = m; t.className = 'toast show' + (bad ? ' bad' : '');
+  clearTimeout(tt); tt = setTimeout(() => t.className = 'toast', bad ? 8000 : 3500);
+}
+
+/* ---------- GitHub API ---------- */
+async function api(path, opts = {}) {
+  const r = await fetch('https://api.github.com' + path, {
+    cache: 'no-store', ...opts,
+    headers: { Accept:'application/vnd.github+json', Authorization:'Bearer ' + S.token, 'X-GitHub-Api-Version':'2022-11-28', ...(opts.headers || {}) }
+  });
+  if (!r.ok) {
+    let m = ''; try { m = (await r.json()).message; } catch (_) {}
+    const e = new Error(m || ('HTTP ' + r.status)); e.status = r.status; throw e;
+  }
+  return r.status === 204 ? null : r.json();
+}
+const cp = p => p.split('/').map(encodeURIComponent).join('/');
+const b64enc = s => { const b = new TextEncoder().encode(s); let o = ''; for (let i = 0; i < b.length; i += 8192) o += String.fromCharCode(...b.subarray(i, i + 8192)); return btoa(o); };
+const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, '')), c => c.charCodeAt(0)));
+
+async function getFile(path) {
+  try {
+    const d = await api(`/repos/${S.owner}/${S.repo}/contents/${cp(path)}?ref=${encodeURIComponent(S.branch)}`);
+    return { sha: d.sha, text: d.content ? b64dec(d.content) : '' };
+  } catch (e) { if (e.status === 404) return null; throw e; }
+}
+const putFile = (path, b64, message, sha) => api(`/repos/${S.owner}/${S.repo}/contents/${cp(path)}`, {
+  method: 'PUT', body: JSON.stringify({ message, content: b64, branch: S.branch, ...(sha ? { sha } : {}) })
+});
+async function delFile(path, message) {
+  const cur = await getFile(path); if (!cur) return;
+  await api(`/repos/${S.owner}/${S.repo}/contents/${cp(path)}`, { method: 'DELETE', body: JSON.stringify({ message, sha: cur.sha, branch: S.branch }) });
+}
+
+/* ---------- login ---------- */
+function guess() {
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/); if (!m) return {};
+  const seg = location.pathname.split('/').filter(Boolean)[0];
+  return { owner: m[1], repo: seg && seg !== 'admin' ? seg : m[1] + '.github.io' };
+}
+async function doLogin(cfg, silent) {
+  Object.assign(S, cfg);
+  try {
+    const r = await api(`/repos/${S.owner}/${S.repo}`);
+    if (r.permissions && r.permissions.push === false) throw Object.assign(new Error('Token tidak punya izin menulis (Contents: Read and write).'), { status: 403 });
+    const f = await getFile('data/content.json');
+    if (f) { S.content = JSON.parse(f.text); S.sha = f.sha; }
+    else { S.content = { programs: [], berita: [], galeri: [] }; S.sha = null; toast('data/content.json belum ada. File dibuat saat Anda menyimpan.'); }
+    for (const k of RESERVED) if (!Array.isArray(S.content[k])) S.content[k] = [];
+    sessionStorage.setItem('adm_token', S.token);
+    localStorage.setItem('adm_cfg', JSON.stringify({ owner: S.owner, repo: S.repo, branch: S.branch }));
+    start();
+  } catch (e) {
+    S.token = '';
+    if (silent) { sessionStorage.removeItem('adm_token'); return; }
+    $('#lerr').textContent = e.status === 401 ? 'Token tidak valid atau sudah kedaluwarsa.'
+      : e.status === 404 ? 'Repo atau branch tidak ditemukan, atau token tidak punya akses ke repo ini.'
+      : 'Gagal masuk: ' + e.message;
+  }
+}
+$('#lf').addEventListener('submit', async e => {
+  e.preventDefault(); const f = new FormData(e.target); $('#lerr').textContent = '';
+  const b = $('#lbtn'); b.disabled = true; b.textContent = 'Memeriksa…';
+  await doLogin({ owner: f.get('owner').trim(), repo: f.get('repo').trim(), branch: f.get('branch').trim() || 'main', token: f.get('token').trim() });
+  b.disabled = false; b.textContent = 'Masuk';
+});
+
+/* ---------- shell ---------- */
+const TABS = [['beranda', 'Beranda'], ['prodi', 'Program studi'], ['berita', 'Berita'], ['galeri', 'Galeri']];
+function start() {
+  $('#login').hidden = true; $('#shell').hidden = false;
+  $('#who').textContent = `${S.owner}/${S.repo} · ${S.branch}`;
+  $('#lf').elements.token.value = '';
+  go('beranda');
+}
+function go(tab) {
+  S.tab = tab;
+  $('#nav').replaceChildren(...TABS.map(([k, l]) => h('button', { class: k === tab ? 'on' : '', onclick: () => go(k) }, l)));
+  const v = { beranda: renderBeranda, prodi: renderProdi, berita: renderBerita, galeri: renderGaleri }[tab]();
+  $('#view').replaceChildren(v);
+  window.scrollTo(0, 0);
+}
+function markDirty() { S.dirty = true; refreshSave(); }
+function refreshSave() {
+  const n = Q.size + (S.dirty ? 1 : 0), b = $('#save');
+  b.disabled = !n; b.textContent = n ? `Simpan (${n})` : 'Simpan';
+}
+$('#out').addEventListener('click', () => {
+  if ((S.dirty || Q.size) && !confirm('Ada perubahan yang belum disimpan. Keluar tanpa menyimpan?')) return;
+  sessionStorage.removeItem('adm_token'); S.dirty = false; Q.clear(); location.reload();
+});
+addEventListener('beforeunload', e => { if (S.dirty || Q.size) { e.preventDefault(); e.returnValue = ''; } });
+
+const referenced = p => JSON.stringify(S.content).includes(p) || [...Q.values()].some(e => e.type === 'json' && JSON.stringify(e.data).includes(p));
+
+async function save() {
+  const btn = $('#save'); btn.disabled = true; btn.textContent = 'Menyimpan…';
+  try {
+    for (const [p, e] of [...Q]) {
+      if (e.type !== 'bin') continue;
+      if (referenced(p)) await putFile(p, e.b64, `Admin: unggah ${p}`);
+      Q.delete(p);
+    }
+    for (const [p, e] of [...Q]) {
+      if (e.type === 'del') await delFile(p, `Admin: hapus ${p}`);
+      else { const cur = await getFile(p); await putFile(p, b64enc(JSON.stringify(e.data, null, 2) + '\n'), `Admin: perbarui ${p}`, cur && cur.sha); }
+      Q.delete(p);
+    }
+    if (S.dirty) {
+      const r = await putFile('data/content.json', b64enc(JSON.stringify(S.content, null, 2) + '\n'), 'Admin: perbarui konten', S.sha);
+      S.sha = r.content.sha; S.dirty = false;
+    }
+    toast('Tersimpan. Situs diperbarui dalam 1–2 menit setelah GitHub Actions selesai.');
+  } catch (err) {
+    const stale = err.status === 409 || err.status === 422;
+    toast('Gagal menyimpan: ' + (stale ? 'data di GitHub sudah berubah. Muat ulang halaman, lalu ulangi. ' : '') + err.message, true);
+  } finally { refreshSave(); }
+}
+$('#save').addEventListener('click', save);
+
+/* ---------- gambar ---------- */
+const imgSrc = p => {
+  if (PREV.has(p)) return PREV.get(p);
+  return /^(https?:)?\/\//.test(p) || p.startsWith('data:') ? p : '../' + p.replace(/^\/+/, '');
+};
+const readURL = f => new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(r.result); r.onerror = no; r.readAsDataURL(f); });
+function pickFiles(multiple) {
+  return new Promise(res => {
+    const i = h('input', { type: 'file', accept: 'image/*', multiple: !!multiple });
+    i.addEventListener('change', () => res([...i.files])); i.click();
+  });
+}
+async function storeImage(file) {
+  let ext = 'jpg', dataURL;
+  if (/svg|gif/.test(file.type)) { ext = file.type.includes('svg') ? 'svg' : 'gif'; dataURL = await readURL(file); }
+  else {
+    const bmp = await createImageBitmap(file), sc = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement('canvas'); c.width = Math.round(bmp.width * sc); c.height = Math.round(bmp.height * sc);
+    const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); x.drawImage(bmp, 0, 0, c.width, c.height);
+    dataURL = c.toDataURL('image/jpeg', 0.82);
+  }
+  const path = `uploads/${Date.now().toString(36)}-${slugify(file.name.replace(/\.[^.]+$/, ''))}.${ext}`;
+  Q.set(path, { type: 'bin', b64: dataURL.split(',')[1] }); PREV.set(path, dataURL); refreshSave();
+  return path;
+}
+async function uploadOne() {
+  const [f] = await pickFiles(false); if (!f) return null;
+  try { return await storeImage(f); } catch (e) { toast('Gambar tidak dapat diproses: ' + f.name, true); return null; }
+}
+
+/* ---------- komponen form ---------- */
+const field = (label, input, hint, tag) => h(tag || 'label', { class: 'f' }, label ? h('span', { class: 'l' }, label) : null, input, hint ? h('small', {}, hint) : null);
+
+function textIn(obj, k, o, ch) {
+  o = o || {}; const area = !!o.area;
+  const e = h(area ? 'textarea' : 'input', { rows: area ? o.area : null, type: area ? null : 'text' });
+  e.value = obj[k] == null ? '' : obj[k];
+  e.addEventListener('input', () => { obj[k] = e.value; ch && ch(); });
+  if (o.list) {
+    const id = 'dl' + Math.random().toString(36).slice(2);
+    e.setAttribute('list', id);
+    return [e, h('datalist', { id }, o.list.map(v => h('option', { value: v })))];
+  }
+  return e;
+}
+function imageField(obj, k, ch) {
+  const prev = h('img', { class: 'thumb', alt: '' });
+  const url = h('input', { type: 'text', placeholder: 'URL gambar atau uploads/…' });
+  const sync = () => { url.value = obj[k] || ''; prev.style.display = obj[k] ? '' : 'none'; if (obj[k]) prev.src = imgSrc(obj[k]); };
+  url.addEventListener('change', () => { obj[k] = url.value.trim(); sync(); ch && ch(); });
+  const up = h('button', { type: 'button', class: 'btn ghost sm', onclick: async () => { const p = await uploadOne(); if (p) { obj[k] = p; sync(); ch && ch(); } } }, 'Unggah foto');
+  sync();
+  return h('div', { class: 'img' }, prev, h('div', { class: 'imgctl' }, url, up));
+}
+const ibtn = (t, fn, dis) => h('button', { class: 'btn ghost sm', type: 'button', onclick: fn, disabled: !!dis, 'aria-label': t === '↑' || t === '←' ? 'Geser naik' : 'Geser turun' }, t);
+function mv(arr, i, d) { const j = i + d; if (j < 0 || j >= arr.length) return false; [arr[i], arr[j]] = [arr[j], arr[i]]; markDirty(); return true; }
+
+/* editor generik (dipakai untuk isi Beranda) */
+function node(par, key, ch, label) {
+  if (label === undefined) label = humanize(key);
+  const v = par[key];
+  if (Array.isArray(v)) return arrEd(par, key, ch, label);
+  if (v && typeof v === 'object') return objEd(v, ch, label);
+  if (typeof v === 'boolean') {
+    const c = h('input', { type: 'checkbox' }); c.checked = v;
+    c.addEventListener('change', () => { par[key] = c.checked; ch(); });
+    return h('label', { class: 'f' }, c, ' ', label);
+  }
+  if (typeof v === 'number') {
+    const n = h('input', { type: 'number' }); n.value = v;
+    n.addEventListener('input', () => { par[key] = n.value === '' ? 0 : Number(n.value); ch(); });
+    return field(label, n);
+  }
+  if (isImg(key)) return field(label, imageField(par, key, ch), null, 'div');
+  const long = typeof v === 'string' && (v.length > 90 || v.includes('\n'));
+  return field(label, textIn(par, key, { area: long ? 4 : 0 }, ch));
+}
+const objEd = (o, ch, label) => h('fieldset', {}, label ? h('legend', {}, label) : null, Object.keys(o).map(k => node(o, k, ch)));
+function arrEd(par, key, ch, label) {
+  const arr = par[key], body = h('div');
+  const draw = () => {
+    body.replaceChildren(...arr.map((it, i) => {
+      const inner = it && typeof it === 'object' && !Array.isArray(it) ? objEd(it, ch, null) : node(arr, i, ch, '');
+      return h('div', { class: 'item' }, inner, h('div', { class: 'ictl' },
+        ibtn('↑', () => { if (mv(arr, i, -1)) draw(); }, i === 0),
+        ibtn('↓', () => { if (mv(arr, i, 1)) draw(); }, i === arr.length - 1),
+        h('button', { class: 'btn danger sm', type: 'button', onclick: () => { arr.splice(i, 1); ch(); draw(); } }, 'Hapus')));
+    }));
+  };
+  draw();
+  const add = h('button', { class: 'btn ghost sm', type: 'button', onclick: () => { arr.push(blank(arr.length ? arr[0] : '')); ch(); draw(); } }, 'Tambah item');
+  return h('fieldset', {}, h('legend', {}, label), body, h('p', { style: 'margin-bottom:12px' }, add));
+}
+
+/* ---------- Beranda ---------- */
+function renderBeranda() {
+  const keys = Object.keys(S.content).filter(k => !RESERVED.includes(k));
+  const root = h('div', {}, h('div', { class: 'bar' }, h('div', {},
+    h('h2', {}, 'Beranda'),
+    h('p', { class: 'sub' }, 'Teks dan gambar halaman utama. Semua bagian di content.json selain program studi, berita, dan galeri tampil di sini.'))));
+  if (!keys.length) root.append(h('p', { class: 'empty' }, 'Belum ada isi beranda di content.json. Tambahkan bagian pertama di bawah.'));
+  for (const k of keys) {
+    root.append(h('div', { class: 'sect' },
+      h('div', { class: 'sh' }, h('button', { class: 'x', type: 'button', onclick: () => { if (confirm(`Hapus bagian "${humanize(k)}" dari content.json?`)) { delete S.content[k]; markDirty(); go('beranda'); } } }, 'Hapus bagian')),
+      node(S.content, k, markDirty)));
+  }
+  const name = h('input', { type: 'text', placeholder: 'Nama bagian baru, mis. judul_hero' });
+  const kind = h('select', {}, h('option', { value: 'text' }, 'Teks'), h('option', { value: 'list' }, 'Daftar'), h('option', { value: 'obj' }, 'Kelompok'));
+  kind.style.cssText = 'font:inherit;padding:9px;border:1px solid #d6cfbd;border-radius:2px;background:#fff';
+  root.append(h('div', { class: 'add' }, name, kind, h('button', { class: 'btn ghost sm', type: 'button', onclick: () => {
+    const k = name.value.trim().replace(/\s+/g, '_');
+    if (!k) return toast('Isi nama bagian dulu.', true);
+    if (k in S.content) return toast('Nama bagian sudah ada.', true);
+    S.content[k] = kind.value === 'list' ? [] : kind.value === 'obj' ? {} : '';
+    markDirty(); go('beranda');
+  } }, 'Tambah bagian')));
+  return root;
+}
+
+/* ---------- CRUD daftar (prodi, berita) ---------- */
+function crud(cfg) {
+  const list = S.content[cfg.key], root = h('div');
+  const showList = () => root.replaceChildren(
+    h('div', { class: 'bar' }, h('div', {}, h('h2', {}, cfg.title), cfg.sub ? h('p', { class: 'sub' }, cfg.sub) : null),
+      h('button', { class: 'btn', onclick: () => edit(null) }, 'Tambah')),
+    list.length ? h('div', { class: 'rows' }, list.map((it, i) => {
+      const th = cfg.thumb && cfg.thumb(it);
+      return h('div', { class: 'row' },
+        th ? h('img', { class: 'rt', src: imgSrc(th), alt: '' }) : null,
+        h('div', { class: 'rm' }, h('b', {}, cfg.label(it) || '(tanpa judul)'), h('small', {}, cfg.meta ? cfg.meta(it) : '')),
+        h('div', { class: 'ra' },
+          ibtn('↑', () => { if (mv(list, i, -1)) showList(); }, i === 0),
+          ibtn('↓', () => { if (mv(list, i, 1)) showList(); }, i === list.length - 1),
+          h('button', { class: 'btn ghost sm', onclick: () => edit(i) }, 'Edit'),
+          h('button', { class: 'btn danger sm', onclick: () => {
+            if (!confirm(`Hapus "${cfg.label(it) || 'item ini'}"?`)) return;
+            cfg.onDelete && cfg.onDelete(it); list.splice(i, 1); markDirty(); showList();
+          } }, 'Hapus')));
+    })) : h('p', { class: 'empty' }, cfg.empty));
+
+  async function edit(i) {
+    const isNew = i == null, draft = isNew ? cfg.blank() : structuredClone(list[i]);
+    if (cfg.load && !isNew) { root.replaceChildren(h('p', { class: 'empty' }, 'Memuat…')); await cfg.load(draft); }
+    const form = cfg.fields.map(f => {
+      if (f.type === 'image') return field(f.label, imageField(draft, f.k), f.hint, 'div');
+      const inp = textIn(draft, f.k, { area: f.area, list: f.list });
+      const el = Array.isArray(inp) ? inp[0] : inp;
+      if (f.today) return field(f.label, h('div', { class: 'inline' }, inp, h('button', { class: 'btn ghost sm', type: 'button', onclick: () => { draft[f.k] = todayID(); el.value = draft[f.k]; } }, 'Hari ini')), f.hint, 'div');
+      return field(f.label, inp, f.hint);
+    });
+    root.replaceChildren(
+      h('div', { class: 'bar' }, h('h2', {}, (isNew ? 'Tambah ' : 'Edit ') + cfg.single)),
+      h('div', { class: 'panel' }, form, h('div', { class: 'acts' },
+        h('button', { class: 'btn', onclick: () => {
+          const err = cfg.valid && cfg.valid(draft); if (err) return toast(err, true);
+          const stored = cfg.store ? cfg.store(draft) : draft;
+          if (isNew) { if (cfg.prepend) list.unshift(stored); else list.push(stored); } else list[i] = stored;
+          markDirty(); showList();
+        } }, 'Terapkan'),
+        h('button', { class: 'btn ghost', onclick: showList }, 'Batal'))),
+      h('p', { class: 'sub', style: 'margin-top:10px' }, 'Perubahan baru dikirim ke GitHub setelah Anda menekan Simpan di bagian atas.'));
+    window.scrollTo(0, 0);
+  }
+  showList();
+  return root;
+}
+
+function renderProdi() {
+  return crud({
+    key: 'programs', title: 'Program studi', single: 'program studi', empty: 'Belum ada program studi. Tekan Tambah untuk membuat yang pertama.',
+    sub: 'Setiap program studi otomatis mendapat halaman sendiri.',
+    label: o => o.nama, meta: o => [o.jenjang, o.deskripsi].filter(Boolean).join(' · '),
+    blank: () => ({ jenjang: 'S1', nama: '', deskripsi: '', detail: '' }),
+    fields: [
+      { k: 'jenjang', label: 'Jenjang', list: ['D3', 'D4', 'S1', 'Profesi', 'S2'] },
+      { k: 'nama', label: 'Nama program studi' },
+      { k: 'deskripsi', label: 'Deskripsi singkat', area: 3, hint: 'Tampil di kartu dan di bagian atas halaman prodi.' },
+      { k: 'detail', label: 'Detail lengkap', area: 10, hint: 'Pisahkan paragraf dengan satu baris kosong.' }
+    ],
+    valid: d => d.nama.trim() ? '' : 'Nama program studi wajib diisi.'
+  });
+}
+
+function renderBerita() {
+  const uniqueSlug = j => {
+    const base = slugify(j), used = new Set(S.content.berita.map(b => b.slug)); let s = base, n = 2;
+    while (used.has(s)) s = `${base}-${n++}`; return s;
+  };
+  return crud({
+    key: 'berita', prepend: true, title: 'Berita', single: 'berita', empty: 'Belum ada berita. Tekan Tambah untuk menulis yang pertama.',
+    sub: 'Setiap berita punya halaman artikel sendiri.',
+    thumb: o => o.gambar, label: o => o.judul, meta: o => [o.tanggal, o.slug ? '' : 'Belum punya halaman artikel'].filter(Boolean).join(' · '),
+    blank: () => ({ judul: '', tanggal: todayID(), gambar: '', isi: '', full: '' }),
+    fields: [
+      { k: 'judul', label: 'Judul' },
+      { k: 'tanggal', label: 'Tanggal', today: true },
+      { k: 'gambar', label: 'Gambar sampul', type: 'image' },
+      { k: 'full', label: 'Isi artikel', area: 12, hint: 'Pisahkan paragraf dengan satu baris kosong.' },
+      { k: 'isi', label: 'Ringkasan untuk kartu', area: 3, hint: 'Kosongkan agar dibuat otomatis dari awal isi artikel.' }
+    ],
+    load: async d => {
+      if (!d.slug) { d.full = d.isi || ''; d.isi = ''; return; }
+      const p = `artikel/${d.slug}.json`, q = Q.get(p);
+      if (q && q.type === 'json') { d.full = q.data.isi || ''; return; }
+      try { const f = await getFile(p); d.full = f ? (JSON.parse(f.text).isi || '') : (d.isi || ''); } catch (_) { d.full = d.isi || ''; }
+    },
+    valid: d => !d.judul.trim() ? 'Judul wajib diisi.' : !d.full.trim() ? 'Isi artikel wajib diisi.' : '',
+    store: d => {
+      const slug = d.slug || uniqueSlug(d.judul), { full, ...rest } = d;
+      Q.set(`artikel/${slug}.json`, { type: 'json', data: { judul: d.judul, tanggal: d.tanggal, gambar: d.gambar || '', isi: full } });
+      return { ...rest, slug, isi: (d.isi || '').trim() || excerpt(full) };
+    },
+    onDelete: o => { if (o.slug) Q.set(`artikel/${o.slug}.json`, { type: 'del' }); }
+  });
+}
+
+/* ---------- Galeri ---------- */
+function renderGaleri() {
+  const list = S.content.galeri, grid = h('div', { class: 'gg' });
+  const draw = () => {
+    grid.replaceChildren(...(list.length ? list.map((g, i) => {
+      const cap = h('input', { type: 'text', placeholder: 'Keterangan foto' }); cap.value = g.ket || '';
+      cap.addEventListener('input', () => { g.ket = cap.value; markDirty(); });
+      return h('div', { class: 'gt' }, h('img', { src: imgSrc(g.src), alt: g.ket || '' }), cap,
+        h('div', { class: 'ra' }, ibtn('←', () => { if (mv(list, i, -1)) draw(); }, i === 0), ibtn('→', () => { if (mv(list, i, 1)) draw(); }, i === list.length - 1),
+          h('button', { class: 'btn danger sm', onclick: () => { if (confirm('Hapus foto ini dari galeri?')) { list.splice(i, 1); markDirty(); draw(); } } }, 'Hapus')));
+    }) : [h('p', { class: 'empty', style: 'grid-column:1/-1' }, 'Belum ada foto. Tekan Tambah foto untuk mengunggah.')]));
+  };
+  draw();
+  return h('div', {}, h('div', { class: 'bar' }, h('div', {}, h('h2', {}, 'Galeri'), h('p', { class: 'sub' }, 'Foto otomatis dikecilkan ke lebar maksimal 1600 px sebelum diunggah.')),
+    h('button', { class: 'btn', onclick: async () => {
+      const fs = await pickFiles(true);
+      for (const f of fs) { try { list.push({ src: await storeImage(f), ket: '' }); } catch (_) { toast('Gagal memproses ' + f.name, true); } }
+      if (fs.length) { markDirty(); draw(); }
+    } }, 'Tambah foto')), grid);
+}
+
+/* ---------- boot ---------- */
+(function boot() {
+  let saved = {}; try { saved = JSON.parse(localStorage.getItem('adm_cfg') || '{}'); } catch (_) {}
+  const cfg = { ...guess(), ...saved }, f = $('#lf').elements;
+  if (cfg.owner) f.owner.value = cfg.owner;
+  if (cfg.repo) f.repo.value = cfg.repo;
+  if (cfg.branch) f.branch.value = cfg.branch;
+  const tk = sessionStorage.getItem('adm_token');
+  if (tk && cfg.owner && cfg.repo) doLogin({ owner: cfg.owner, repo: cfg.repo, branch: cfg.branch || 'main', token: tk }, true);
+})();
+</script>
+</body>
+</html>

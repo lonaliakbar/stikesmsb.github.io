@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="../../">
+<meta name="description" content="Mencetak tenaga kesehatan masyarakat yang unggul dalam promosi dan pencegahan penyakit.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kesehatan Masyarakat — STIKES Medika Seramoe Barat">
+<meta property="og:description" content="Mencetak tenaga kesehatan masyarakat yang unggul dalam promosi dan pencegahan penyakit.">
+<script>window.PAGE={"p": "prodi", "s": "kesehatan-masyarakat"};</script>
+<title>Kesehatan Masyarakat — STIKES Medika Seramoe Barat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy-deep:#0A1E33; --navy-light:#123457; --gold:#F4E3B2; --gold-dim:#C9AE6E; --sky:#5BAEEA; --sky-deep:#1D8FE1; --cream:#FBF8F1; --ink:#0A1E33; --muted:#5C6B7A; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+  h1,h2,h3{ font-family:'Cormorant Garamond',serif; font-weight:600; }
+  a{ text-decoration:none; color:inherit; }
+  img{ max-width:100%; display:block; }
+  .w{ max-width:1000px; margin:0 auto; padding:0 28px; }
+  header{ background:var(--navy-deep); border-bottom:1px solid rgba(244,227,178,0.15); position:sticky; top:0; z-index:20; }
+  nav{ display:flex; align-items:center; justify-content:space-between; max-width:1000px; margin:0 auto; padding:16px 28px; flex-wrap:wrap; gap:10px; }
+  .logo{ font-family:'Cormorant Garamond',serif; line-height:1; display:flex; flex-direction:column; }
+  .logo b{ color:var(--gold); font-size:20px; letter-spacing:1px; }
+  .logo i{ color:var(--sky); font-size:16px; }
+  .links{ display:flex; gap:24px; font-size:13px; color:rgba(255,255,255,0.75); flex-wrap:wrap; }
+  .links a:hover, .links a.on{ color:var(--gold); }
+  .top{ background:linear-gradient(160deg,var(--navy-deep),var(--navy-light)); padding:56px 0 44px; }
+  .eyebrow{ font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-dim); font-weight:500; }
+  .top h1{ color:#fff; font-size:44px; line-height:1.2; margin-top:10px; }
+  .top p{ color:rgba(255,255,255,0.65); margin-top:10px; max-width:600px; font-size:15px; }
+  .body{ padding:44px 0 72px; }
+  .cover{ width:100%; max-height:380px; object-fit:cover; border-radius:4px; margin-bottom:28px; }
+  .text p{ font-size:16px; color:#2b3a4a; margin-bottom:16px; line-height:1.8; }
+  .date{ font-size:12px; color:var(--sky-deep); font-weight:600; letter-spacing:0.5px; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
+  .card{ display:block; background:#fff; border:1px solid #e8e2d4; border-radius:4px; overflow:hidden; transition:all 0.3s ease; }
+  a.card:hover{ border-color:var(--sky-deep); transform:translateY(-6px); box-shadow:0 12px 30px rgba(29,143,225,0.14); }
+  .card img{ width:100%; height:160px; object-fit:cover; }
+  .card .in{ padding:20px; }
+  .card h3{ font-size:21px; margin:6px 0 8px; color:var(--navy-deep); }
+  .card p{ font-size:13px; color:var(--muted); }
+  .jenjang{ font-size:11px; letter-spacing:1.5px; color:var(--sky-deep); text-transform:uppercase; font-weight:600; }
+  h2.sec{ font-size:28px; margin:48px 0 18px; }
+  .btn{ display:inline-block; background:var(--gold); color:var(--navy-deep); font-weight:600; font-size:13px; padding:13px 26px; border-radius:2px; margin-top:10px; }
+  .btn:hover{ filter:brightness(0.95); }
+  .gal{ columns:3 220px; column-gap:12px; }
+  .gal figure{ break-inside:avoid; margin-bottom:12px; cursor:zoom-in; }
+  .gal img{ width:100%; border-radius:4px; }
+  .gal figcaption{ font-size:12px; color:var(--muted); padding:4px 2px; }
+  .lb{ position:fixed; inset:0; background:rgba(10,30,51,0.92); display:none; align-items:center; justify-content:center; z-index:50; padding:24px; cursor:zoom-out; flex-direction:column; gap:12px; }
+  .lb.open{ display:flex; }
+  .lb img{ max-height:85vh; border-radius:4px; }
+  .lb span{ color:#fff; font-size:13px; }
+  .msg{ text-align:center; color:var(--muted); padding:60px 0; }
+  footer{ background:var(--navy-deep); color:rgba(255,255,255,0.55); text-align:center; padding:26px; font-size:12px; }
+  footer a{ color:var(--gold-dim); }
+  @media (max-width:640px){ .top h1{ font-size:32px; } }
+</style>
+</head>
+<body>
+<header><nav>
+  <a class="logo" href="index.html"><b>STIKES</b><i>Medika</i></a>
+  <div class="links">
+    <a href="index.html">Beranda</a>
+    <a href="prodi/" data-p="prodi">Program studi</a>
+    <a href="berita/" data-p="berita">Berita</a>
+    <a href="galeri/" data-p="galeri">Galeri</a>
+    <a href="index.html#kontak">Kontak</a>
+  </div>
+</nav></header>
+<main id="app"><p class="msg">Memuat...</p></main>
+<footer>© <span id="y"></span> STIKES Medika Seramoe Barat · Kabupaten Aceh Barat, Aceh · <a href="index.html#kontak">Hubungi kami</a></footer>
+<div class="lb" id="lb"><img id="lbImg" alt=""><span id="lbCap"></span></div>
+
+<script>
+  const Q = new URLSearchParams(location.search);
+  // Halaman hasil generate membawa window.PAGE; versi lama memakai ?p=...&s=...
+  const PG = window.PAGE || { p: Q.get('p') || 'berita', s: Q.get('s') };
+  const P = PG.p, S = PG.s;
+  const app = document.getElementById('app');
+  const DEF = 'https://assets.siakadcloud.com/uploads/stikesmsb/bgaplikasi/1839.jpg';
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const slugify = t => String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50) || 'item';
+  const paras = t => String(t || '').split(/\n{2,}/).filter(x => x.trim()).map(x => `<p>${esc(x).replace(/\n/g, '<br>')}</p>`).join('');
+  const topBar = (eb, title, sub) => `<section class="top"><div class="w"><div class="eyebrow">${eb}</div><h1>${title}</h1>${sub ? `<p>${sub}</p>` : ''}</div></section>`;
+  const page = (inner) => `<div class="body"><div class="w">${inner}</div></div>`;
+  const msg = t => page(`<p class="msg">${t}</p>`);
+  const artUrl = s => `berita/${encodeURIComponent(s)}/`;
+  const proUrl = n => `prodi/${slugify(n)}/`;
+
+  async function getJSON(u) {
+    const r = await fetch(u + '?v=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }
+
+  function beritaCards(list) {
+    return `<div class="grid">${list.map(b => {
+      const inner = `<img src="${esc(b.gambar || DEF)}" alt=""><div class="in"><div class="date">${esc(b.tanggal)}</div><h3>${esc(b.judul)}</h3><p>${esc(b.isi)}</p></div>`;
+      return b.slug ? `<a class="card" href="${artUrl(b.slug)}">${inner}</a>` : `<div class="card">${inner}</div>`;
+    }).join('')}</div>`;
+  }
+
+  async function artikel(c) {
+    try {
+      const a = await getJSON('artikel/' + encodeURIComponent(S) + '.json');
+      document.title = a.judul + ' — STIKES Medika Seramoe Barat';
+      const lain = (c.berita || []).filter(b => b.slug && b.slug !== S).slice(0, 3);
+      app.innerHTML = topBar('Berita · ' + esc(a.tanggal), esc(a.judul)) + page(
+        (a.gambar ? `<img class="cover" src="${esc(a.gambar)}" alt="">` : '') +
+        `<div class="text">${paras(a.isi)}</div>` +
+        (lain.length ? `<h2 class="sec">Berita lainnya</h2>${beritaCards(lain)}` : '') +
+        `<p style="margin-top:28px"><a class="btn" href="berita/">← Semua berita</a></p>`);
+    } catch (e) {
+      app.innerHTML = topBar('Berita', 'Artikel tidak ditemukan') + msg('Artikel belum tersedia atau masih diproses oleh GitHub Pages. Coba lagi sebentar. <br><a class="btn" href="berita/">← Semua berita</a>');
+    }
+  }
+
+  function berita(c) {
+    document.title = 'Berita — STIKES Medika Seramoe Barat';
+    const list = c.berita || [];
+    app.innerHTML = topBar('Berita', 'Kabar terbaru kampus', 'Informasi dan agenda terkini dari STIKES Medika Seramoe Barat.') +
+      page(list.length ? beritaCards(list) : '<p class="msg">Belum ada berita.</p>');
+  }
+
+  function prodi(c) {
+    const list = c.programs || [];
+    const cur = S && list.find(p => slugify(p.nama) === S);
+    if (!cur) {
+      document.title = 'Program Studi — STIKES Medika Seramoe Barat';
+      app.innerHTML = topBar('Program studi', 'Pilihan jalur akademik kesehatan', `${list.length} program studi yang dirancang untuk kebutuhan tenaga kesehatan masa depan.`) +
+        page(`<div class="grid">${list.map(p => `<a class="card" href="${proUrl(p.nama)}"><div class="in"><div class="jenjang">${esc(p.jenjang)}</div><h3>${esc(p.nama)}</h3><p>${esc(p.deskripsi)}</p></div></a>`).join('')}</div>`);
+      return;
+    }
+    document.title = cur.nama + ' — STIKES Medika Seramoe Barat';
+    const lain = list.filter(p => p !== cur);
+    app.innerHTML = topBar('Program studi · ' + esc(cur.jenjang), esc(cur.nama), esc(cur.deskripsi)) + page(
+      `<div class="text">${paras(cur.detail) || paras(cur.deskripsi)}</div>` +
+      `<p><a class="btn" href="index.html#pmb">Daftar sekarang</a></p>` +
+      (lain.length ? `<h2 class="sec">Program studi lainnya</h2><div class="grid">${lain.map(p => `<a class="card" href="${proUrl(p.nama)}"><div class="in"><div class="jenjang">${esc(p.jenjang)}</div><h3>${esc(p.nama)}</h3><p>${esc(p.deskripsi)}</p></div></a>`).join('')}</div>` : ''));
+  }
+
+  function galeri(c) {
+    document.title = 'Galeri — STIKES Medika Seramoe Barat';
+    const list = c.galeri || [];
+    app.innerHTML = topBar('Galeri', 'Suasana kampus', 'Sekilas kegiatan akademik dan lingkungan kampus.') +
+      page(list.length ? `<div class="gal">${list.map(g => `<figure data-src="${esc(g.src)}" data-cap="${esc(g.ket)}"><img src="${esc(g.src)}" alt="${esc(g.ket || 'Foto galeri')}" loading="lazy">${g.ket ? `<figcaption>${esc(g.ket)}</figcaption>` : ''}</figure>`).join('')}</div>` : '<p class="msg">Belum ada foto.</p>');
+    app.querySelectorAll('figure').forEach(f => f.addEventListener('click', () => {
+      document.getElementById('lbImg').src = f.dataset.src;
+      document.getElementById('lbCap').textContent = f.dataset.cap;
+      document.getElementById('lb').classList.add('open');
+    }));
+  }
+
+  document.getElementById('lb').addEventListener('click', e => e.currentTarget.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('lb').classList.remove('open'); });
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const cur = P === 'artikel' ? 'berita' : P;
+  document.querySelectorAll('.links a[data-p]').forEach(a => { if (a.dataset.p === cur) a.classList.add('on'); });
+
+  (async () => {
+    let c;
+    try { c = await getJSON('data/content.json'); }
+    catch (e) { app.innerHTML = topBar('Halaman', 'Data belum dapat dimuat') + msg('Pastikan file data/content.json tersedia dan halaman dibuka lewat GitHub Pages (bukan langsung dari file).'); return; }
+    if (P === 'artikel' && S) return artikel(c);
+    if (P === 'prodi') return prodi(c);
+    if (P === 'galeri') return galeri(c);
+    return berita(c);
+  })();
+</script>
+</body>
+</html>
